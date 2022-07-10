@@ -1,125 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Login</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{{url('assest/images/icons/favicon.ico')}}"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url('assest/vendor/bootstrap/css/bootstrap.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url('assest/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url('assest/fonts/iconic/css/material-design-iconic-font.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url('assest/vendor/animate/animate.css')}}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{url('assest/vendor/css-hamburgers/hamburgers.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url('assest/vendor/animsition/css/animsition.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url('assest/vendor/select2/select2.min.css')}}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{url('assest/vendor/daterangepicker/daterangepicker.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url('assest/css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url('assest/css/main.css')}}">
-<!--===============================================================================================-->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+  <title>Login</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets-login/img/favicon.png" rel="icon">
+  <link href="assets-login/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url('assets-login/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url('assets-login/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url('assets-login/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url('assets-login/vendor/quill/quill.snow.css')}}" rel="stylesheet">
+  <link href="{{url('assets-login/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+  <link href="{{url('assets-login/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{url('assets-login/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url('assets-login/css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.2.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
+
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form" action="{{ url('loginpost', []) }}" method="post">
-					@csrf
-					<span class="login100-form-title p-b-49">
-						Login
-					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is reauired">
-						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Type your email">
-						<span class="focus-input100" data-symbol="&#xf206;"></span>
-					</div>
+  <main>
+    <div class="container">
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="password" placeholder="Type your password">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
-					</div>
-					
-					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
-							Forgot password?
-						</a>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Login
-							</button>
-						</div>
-					</div>
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-					<!--<div class="txt1 text-center p-t-54 p-b-20">
-						<span>
-							Or Sign Up Using
-						</span>
-					</div>
+              <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  {{-- <img src="assets-login/img/logo.png" alt=""> --}}
+                  {{-- <span class="d-none d-lg-block">Login</span> --}}
+                </a>
+              </div><!-- End Logo -->
 
-					<div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
-							<i class="fa fa-facebook"></i>
-						</a>
+              <div class="card mb-3">
 
-						<a href="#" class="login100-social-item bg2">
-							<i class="fa fa-twitter"></i>
-						</a>
+                <div class="card-body">
 
-						<a href="#" class="login100-social-item bg3">
-							<i class="fa fa-google"></i>
-						</a>
-					</div>
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Login</h5>
+                    {{-- <p class="text-center small">Enter your username & password to login</p> --}}
+                  </div>
 
-					<div class="flex-col-c p-t-155">
-						<span class="txt1 p-b-17">
-							Or Sign Up Using
-						</span>
+                  <form action="{{ url('loginpost',[]) }}" method="post" class="row g-3 needs-validation" novalidate>
+                    @csrf
 
-						<a href="#" class="txt2">
-							Sign Up
-						</a>
-					</div>-->
-				</form>
-			</div>
-		</div>
-	</div>
-	
+                    <div class="col-12">
+                      <label class="form-label">Email</label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" name="email" class="form-control" required>
+                        <div class="invalid-feedback">Please enter your email.</div>
+                      </div>
+                    </div>
 
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="{{url('assest/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{url('assest/vendor/animsition/js/animsition.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{url('assest/vendor/bootstrap/js/popper.js')}}"></script>
-	<script src="{{url('assest/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{url('assest/vendor/select2/select2.min.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{url('assest/vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{url('assest/vendor/daterangepicker/daterangepicker.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{url('assest/vendor/countdowntime/countdowntime.js')}}"></script>
-<!--===============================================================================================-->
-	<script src="{{url('assest/js/main.js')}}"></script>
+                    <div class="col-12">
+                      <label  class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control"  required>
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
 
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                    </div>
+                    <div class="col-12">
+                      <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+         
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url('assets-login/vendor/apexcharts/apexcharts.min.js')}}"></script>
+  <script src="{{url('assets-login/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url('assets-login/vendor/chart.js/chart.min.js')}}"></script>
+  <script src="{{url('assets-login/vendor/echarts/echarts.min.js')}}"></script>
+  <script src="{{url('assets-login/vendor/quill/quill.min.js')}}"></script>
+  <script src="{{url('assets-login/vendor/simple-datatables/simple-datatables.js')}}"></script>
+  <script src="{{url('assets-login/vendor/tinymce/tinymce.min.js')}}"></script>
+  <script src="{{url('assets-login/vendor/php-email-form/validate.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url('assets-login/js/main.js')}}"></script>
+
+
+  
 </body>
+
 </html>
